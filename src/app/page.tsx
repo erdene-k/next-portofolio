@@ -1,98 +1,142 @@
-"use client"
-import { Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React from "react";
+import { ContainerScroll } from "./components/ui/container-scroll-animation";
+import Slider from "./components/ui/Slider";
 
-import IsometricModel from "./models/IsometricModel";
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar";
-const Home = () => {
-  const [isRotating, setRotating] = useState(false);
-  const adjustIslandForScreenSize = () => {
-    let screenScale = [5.5, 5.5, 5.5];
-    const screenPos = [0, 0, -100];
-    let rotation = [0.5, -0.8, 0];
-    // if (window.innerWidth < 768) {
-    //   screenScale = [0.9, 0.9, 0.9];
-    // } else {
-    //   screenScale = [1, 1, 1];
-    // }
-    return [screenScale, screenPos, rotation];
-  };
 
-  const [screenScale, screenPos, rotation] = adjustIslandForScreenSize();
-
+function Home() {
   return (
-    <BrowserRouter>
-      {/* <Navbar /> */}
-      <section className="home-page">
-        <div className="canvas-content">
-          {/* <Suspense fallback={<Loader />}>   </Suspense>*/}
-
-
-        
-            <p  className="info-text">
-              Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Totam perspiciatis veritatis commodi ducimus
-              quaerat qui quas? Consectetur harum ipsam excepturi qui
-              voluptatibus accusamus, repellendus fugit! Dolorum doloribus omnis
-              possimus laboriosam. amet consecte Lorem ipsum dolor sit amet
-              consectetur, adipisicing elit. Aperiam eveniet nam fuga
-              reiciendis, harum ab quis atque neque quibusdam veniam beatae
-              porro incidunt nihil cupiditate explicabo earum quia! Sapiente,
-              non!tur adipisic Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Accusamus amet fugiat ratione beatae illum quam
-              reiciendis architecto atque dignissimos. Est autem, voluptatem
-              amet necessitatibus aut excepturi odio odit distinctio earum!ing
-              elit. Officiis repellendus totam, quaerat sit corporis a culpa
-              eveniet sed ex voluptate quasi explicabo cupiditate incidunt
-              nesciunt vitae. Numquam reprehenderit debitis sapiente? Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Quis culpa
-              minus numquam! Unde molestias, impedit voluptate cumque, fugit
-              possimus laborum quidem voluptatem, repellat alias perspiciatis
-              illo tempore dolore explicabo nemo.
-            </p>
-         
-        </div>
-
-      
-
-
-	<div className="section full-height over-hide px-4 px-sm-0">
-		<div className="container">
-			<div className="row full-height justify-content-center">
-				<div className="col-lg-10 col-xl-8 align-self-center padding-tb">
-					<div className="section mx-auto text-center slider-height-padding">
-			          	<input className="checkbox frst" type="radio" id="slide-1" name="slider" />
-			          	<label htmlFor="slide-1"></label>
-			          	<input className="checkbox scnd" type="radio" name="slider" id="slider-2"/>
-			          	<label htmlFor="slider-2"></label>
-			          	<input className="checkbox thrd" type="radio" name="slider" id="slider-3"/>
-			          	<label htmlFor="slider-3"></label>
-			          	<input className="checkbox foth" type="radio" name="slider" id="slider-4"/>
-			          	<label htmlFor="slider-4"></label>
-						<ul>
-							<li>
-								<span>MALE GOOFY FACE</span>
-						    </li>
-							<li>
-								<span>TOY PIG</span>
-						    </li>
-							<li>
-								<span>SHY PORTRAIT</span>
-						    </li>
-							<li>
-								<span>SKATEBOARD FACE</span>
-						    </li>
-					    </ul>
-				    </div>
-			    </div>
-	      	</div>
-	    </div>
-	</div>
-      </section>
-      <div id="gg" style={{ backgroundColor: "red", height: 100 }}></div>
-    </BrowserRouter>
+    <div className="flex flex-col overflow-hidden">
+      <ContainerScroll
+        users={users}
+        titleComponent={
+          <>
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
+              Unleash the power of <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Scroll Animations
+              </span>
+            </h1>
+          </>
+        }
+      />
+      <Slider/>
+    </div>
   );
-};
-
+}
 export default Home;
+export const users = [
+  {
+    name: "Manu Arora",
+    designation: "Founder, Algochurn",
+    image: "https://picsum.photos/id/10/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Sarah Singh",
+    designation: "Founder, Sarah's Kitchen",
+    image: "https://picsum.photos/id/11/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "John Doe",
+    designation: "Software Engineer, Tech Corp",
+    image: "https://picsum.photos/id/12/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Jane Smith",
+    designation: "Product Manager, Innovate Inc",
+    image: "https://picsum.photos/id/13/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Robert Johnson",
+    designation: "Data Scientist, DataWorks",
+    image: "https://picsum.photos/id/14/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Emily Davis",
+    designation: "UX Designer, DesignHub",
+    image: "https://picsum.photos/id/15/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Michael Miller",
+    designation: "CTO, FutureTech",
+    image: "https://picsum.photos/id/16/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Sarah Brown",
+    designation: "CEO, StartUp",
+    image: "https://picsum.photos/id/17/300/300",
+  },
+  {
+    name: "James Wilson",
+    designation: "DevOps Engineer, CloudNet",
+    image: "https://picsum.photos/id/18/300/300",
+    badge: "Something",
+  },
+  {
+    name: "Patricia Moore",
+    designation: "Marketing Manager, MarketGrowth",
+    image: "https://picsum.photos/id/19/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Richard Taylor",
+    designation: "Frontend Developer, WebSolutions",
+    image: "https://picsum.photos/id/20/300/300",
+  },
+  {
+    name: "Linda Anderson",
+    designation: "Backend Developer, ServerSecure",
+    image: "https://picsum.photos/id/21/300/300",
+  },
+  {
+    name: "William Thomas",
+    designation: "Full Stack Developer, FullStack",
+    image: "https://picsum.photos/id/22/300/300",
+    badge: "Badger",
+  },
+  {
+    name: "Elizabeth Jackson",
+    designation: "Project Manager, ProManage",
+    image: "https://picsum.photos/id/23/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "David White",
+    designation: "Database Administrator, DataSafe",
+    image: "https://picsum.photos/id/24/300/300",
+    badge: "Advocate",
+  },
+  {
+    name: "Jennifer Harris",
+    designation: "Network Engineer, NetConnect",
+    image: "https://picsum.photos/id/25/300/300",
+  },
+  {
+    name: "Charles Clark",
+    designation: "Security Analyst, SecureIT",
+    image: "https://picsum.photos/id/26/300/300",
+  },
+  {
+    name: "Susan Lewis",
+    designation: "Systems Analyst, SysAnalyse",
+    image: "https://picsum.photos/id/27/300/300",
+  },
+  {
+    name: "Joseph Young",
+    designation: "Mobile Developer, AppDev",
+    image: "https://picsum.photos/id/28/300/300",
+    badge: "Mentor",
+  },
+  {
+    name: "Margaret Hall",
+    designation: "Quality Assurance, BugFree",
+    image: "https://picsum.photos/id/29/300/300",
+    badge: "Developer",
+  },
+];

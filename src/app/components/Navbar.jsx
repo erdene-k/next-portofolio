@@ -1,6 +1,6 @@
 import ToggleButton from "./ToggleButton";
 import { HashLink as Link } from "react-router-hash-link";
-import MenuSVG from "../assets/images/menu.svg?react";
+
 const Navbar = () => {
   return (
     <header className="header">
@@ -27,7 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <a href="#">
-              <MenuSVG />
+              {/* <MenuSVG /> */}
             </a>
           </li>
           <li>
@@ -55,4 +55,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-//   <div className="animation start-home"></div>
+

@@ -23,28 +23,13 @@
   }
 }
 
- @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
- body{
-   font-family: 'Poppins', sans-serif;
-   font-weight: 300;
-   font-size: 15px;
-   line-height: 1.7;
-   color: #343434;
-   background-color: #f1f2f6;
-   overflow-x: hidden;
- }
- a {
-   cursor: pointer;
- }
- a:hover {
-   text-decoration: none;
- }
- 
  .section{
    position: relative;
    width: 100%;
-   display: block;
+   display: flex;
+   justify-content: center;
+
  }
  .full-height{
    min-height: 100vh;
@@ -52,9 +37,7 @@
  .over-hide{
    overflow: hidden;
  }
- .padding-tb{
-   padding: 100px 0;
- }
+
  [type="radio"]:checked,
  [type="radio"]:not(:checked){
    position: absolute;
